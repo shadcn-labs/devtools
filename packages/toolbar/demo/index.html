@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Shadcn Labs devtools demo</title>
+    <meta
+      name="description"
+      content="Playground for the Shadcn Labs toolbar: registry browser and Open Graph inspector."
+    />
+    <link rel="canonical" href="https://devtools.shadcn-labs.com/" data-demo />
+    <meta property="og:type" content="website" data-demo />
+    <meta property="og:site_name" content="Shadcn Labs" data-demo />
+    <meta
+      property="og:url"
+      content="https://devtools.shadcn-labs.com/"
+      data-demo
+    />
+    <meta property="og:title" content="Shadcn Labs devtools" data-demo />
+    <meta
+      property="og:description"
+      content="One toolbar for every Shadcn Labs registry: search, install and inspect your Open Graph images."
+      data-demo
+    />
+    <meta
+      property="og:image"
+      content="https://www.ogimagecn.com/og.png"
+      data-demo
+    />
+    <meta property="og:image:width" content="1200" data-demo />
+    <meta property="og:image:height" content="630" data-demo />
+    <meta property="og:image:type" content="image/png" data-demo />
+    <meta
+      property="og:image:alt"
+      content="ogimagecn: Open Graph image components"
+      data-demo
+    />
+    <meta name="twitter:card" content="summary_large_image" data-demo />
+    <meta name="twitter:site" content="@shadcnlabs" data-demo />
+    <meta name="twitter:creator" content="@shadcnlabs" data-demo />
+    <meta name="twitter:title" content="Shadcn Labs devtools" data-demo />
+    <meta
+      name="twitter:description"
+      content="One toolbar for every Shadcn Labs registry: search, install and inspect your Open Graph images."
+      data-demo
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.ogimagecn.com/og.png"
+      data-demo
+    />
+    <style>
+      :root {
+        color-scheme: light dark;
+        font-family: ui-sans-serif, system-ui, sans-serif;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+      }
+      main {
+        max-width: 560px;
+        padding: 32px;
+        line-height: 1.6;
+      }
+      nav {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      kbd {
+        font-family: ui-monospace, monospace;
+        padding: 1px 6px;
+        border: 1px solid #8884;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1 id="heading">Shadcn Labs devtools</h1>
+      <p>
+        The toolbar sits in the bottom-right corner. Click it or press
+        <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>L</kbd>.
+      </p>
+      <p>
+        Client-side routes swap the page's metadata the way Next.js streams it
+        after navigation:
+      </p>
+      <nav>
+        <a href="/" data-route>Complete metadata</a>
+        <a href="/blog/relative-image" data-route>Needs work</a>
+      </nav>
+    </main>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

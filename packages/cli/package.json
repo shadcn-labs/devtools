@@ -1,0 +1,31 @@
+{
+  "name": "@shadcn-labs/devtools",
+  "version": "0.1.0",
+  "description": "CLI for Shadcn Labs devtools: set up the toolbar, add registry items, run the editor bridge.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shadcn-labs/devtools.git",
+    "directory": "packages/cli"
+  },
+  "bin": {
+    "shadcn-labs-devtools": "./dist/index.mjs"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@shadcn-labs/devtools-bridge": "workspace:*",
+    "@shadcn-labs/devtools-core": "workspace:*",
+    "@shadcn-labs/devtools-plugin-api": "workspace:*",
+    "picocolors": "^1.1.1"
+  }
+}

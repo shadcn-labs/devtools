@@ -1,0 +1,25 @@
+{
+  "name": "@shadcn-labs/devtools-plugin-api",
+  "version": "0.1.0",
+  "description": "Plugin contract for Shadcn Labs devtools (toolbar panels, project detection, bridge protocol).",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shadcn-labs/devtools.git",
+    "directory": "packages/plugin-api"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": "./dist/index.js",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "typecheck": "tsc --noEmit"
+  }
+}

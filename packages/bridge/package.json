@@ -1,0 +1,31 @@
+{
+  "name": "@shadcn-labs/devtools-bridge",
+  "version": "0.1.0",
+  "description": "Localhost bridge between the Shadcn Labs toolbar and an IDE/CLI host.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shadcn-labs/devtools.git",
+    "directory": "packages/bridge"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    "./client": "./dist/client.mjs",
+    "./server": "./dist/server.mjs",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@shadcn-labs/devtools-core": "workspace:*",
+    "@shadcn-labs/devtools-plugin-api": "workspace:*"
+  }
+}

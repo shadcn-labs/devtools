@@ -1,0 +1,149 @@
+{
+  "name": "shadcn-labs-devtools",
+  "displayName": "Shadcn Labs",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Browse and install Shadcn Labs registry items (ogimagecn, shadercn, pdfcn, termcn, shadcn-cssinjs) and connect the in-browser toolbar to your editor.",
+  "categories": [
+    "Other",
+    "Snippets"
+  ],
+  "keywords": [
+    "devtools",
+    "ogimagecn",
+    "open graph",
+    "pdfcn",
+    "registry",
+    "shadcn",
+    "shadcn-cssinjs",
+    "shadcn/ui",
+    "shadercn",
+    "termcn"
+  ],
+  "homepage": "https://github.com/shadcn-labs/devtools/tree/main/apps/vscode#readme",
+  "bugs": {
+    "url": "https://github.com/shadcn-labs/devtools/issues"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shadcn-labs/devtools.git",
+    "directory": "apps/vscode"
+  },
+  "publisher": "shadcn-labs",
+  "type": "module",
+  "main": "./dist/extension.cjs",
+  "scripts": {
+    "build": "tsdown",
+    "typecheck": "tsc --noEmit",
+    "test": "vscode-test",
+    "package": "vsce package --no-dependencies"
+  },
+  "dependencies": {
+    "@shadcn-labs/devtools-bridge": "workspace:*",
+    "@shadcn-labs/devtools-core": "workspace:*",
+    "@shadcn-labs/devtools-plugin-api": "workspace:*",
+    "@shadcn-labs/devtools-toolbar": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/vscode": "~1.96.0",
+    "@vscode/test-cli": "^0.0.15",
+    "@vscode/test-electron": "^3.1.0",
+    "@vscode/vsce": "^4.0.0"
+  },
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "shadcnLabs",
+          "title": "Shadcn Labs",
+          "icon": "media/mark.svg"
+        }
+      ]
+    },
+    "views": {
+      "shadcnLabs": [
+        {
+          "type": "webview",
+          "id": "shadcnLabs.registry",
+          "name": "Registries"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "shadcnLabs.addItem",
+        "title": "Add Registry Item…",
+        "category": "Shadcn Labs",
+        "icon": "$(add)"
+      },
+      {
+        "command": "shadcnLabs.setupToolbar",
+        "title": "Set Up Browser Toolbar",
+        "category": "Shadcn Labs"
+      },
+      {
+        "command": "shadcnLabs.restartBridge",
+        "title": "Restart Toolbar Bridge",
+        "category": "Shadcn Labs"
+      },
+      {
+        "command": "shadcnLabs.refreshRegistries",
+        "title": "Refresh Registries",
+        "category": "Shadcn Labs",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "shadcnLabs.showBridgeStatus",
+        "title": "Show Toolbar Bridge Status",
+        "category": "Shadcn Labs"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "shadcnLabs.addItem",
+          "when": "view == shadcnLabs.registry",
+          "group": "navigation@1"
+        },
+        {
+          "command": "shadcnLabs.refreshRegistries",
+          "when": "view == shadcnLabs.registry",
+          "group": "navigation@2"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Shadcn Labs",
+      "properties": {
+        "shadcnLabs.bridge.enabled": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "Run the localhost bridge (`127.0.0.1`, ports 5747–5756) that lets the Shadcn Labs browser toolbar install items and open source files in this editor."
+        },
+        "shadcnLabs.bridge.allowedOrigins": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^https?://[^/]+$",
+            "patternErrorMessage": "Use an origin such as http://app.test:3000 (scheme, host and optional port; no path)."
+          },
+          "default": [],
+          "markdownDescription": "Extra dev-server origins allowed to talk to the bridge, beyond `localhost`, `127.0.0.1`, `[::1]` and `*.localhost` (e.g. `http://app.test:3000`)."
+        }
+      }
+    }
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "icon": "media/icon.png",
+  "galleryBanner": {
+    "color": "#09090b",
+    "theme": "dark"
+  },
+  "engines": {
+    "vscode": "^1.96.0"
+  }
+}

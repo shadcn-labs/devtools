@@ -1,0 +1,35 @@
+{
+  "name": "@shadcn-labs/devtools-vite",
+  "version": "0.1.0",
+  "description": "Vite plugin that injects the Shadcn Labs devtools toolbar during `vite dev`.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shadcn-labs/devtools.git",
+    "directory": "packages/vite"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@shadcn-labs/devtools-core": "workspace:*",
+    "@shadcn-labs/devtools-toolbar": "workspace:*"
+  },
+  "devDependencies": {
+    "vite": "^8.3.0"
+  },
+  "peerDependencies": {
+    "vite": ">=5"
+  }
+}

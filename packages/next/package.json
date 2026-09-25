@@ -1,0 +1,41 @@
+{
+  "name": "@shadcn-labs/devtools-next",
+  "version": "0.1.0",
+  "description": "Next.js adapter that mounts the Shadcn Labs devtools toolbar in development.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shadcn-labs/devtools.git",
+    "directory": "packages/next"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": "./dist/index.js",
+    "./client": "./dist/client.js",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@shadcn-labs/devtools-core": "workspace:*",
+    "@shadcn-labs/devtools-plugin-api": "workspace:*",
+    "@shadcn-labs/devtools-toolbar": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.14",
+    "next": "^16.3.6",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5"
+  },
+  "peerDependencies": {
+    "next": ">=14",
+    "react": ">=18"
+  }
+}

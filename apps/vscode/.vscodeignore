@@ -1,0 +1,9 @@
+**
+!dist/extension.cjs
+!dist/webview.js
+!media/icon.png
+!media/mark.svg
+!package.json
+!README.md
+!LICENSE
+!CHANGELOG.md

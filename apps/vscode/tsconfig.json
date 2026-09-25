@@ -1,0 +1,8 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES2023", "ES2024.Promise", "DOM", "DOM.Iterable"],
+    "types": ["node", "vscode", "mocha"]
+  },
+  "include": ["src", "tsdown.config.ts"]
+}

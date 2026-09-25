@@ -1,0 +1,49 @@
+:root {
+  color-scheme: light dark;
+  --page-bg: #fafafa;
+  --page-fg: #18181b;
+  --page-muted: #71717a;
+  --page-border: #e4e4e7;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page-bg: #09090b;
+    --page-fg: #fafafa;
+    --page-muted: #a1a1aa;
+    --page-border: #27272a;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--page-bg);
+  color: var(--page-fg);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+.site-header,
+.site-main {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.site-header {
+  display: flex;
+  gap: 1.25rem;
+  border-bottom: 1px solid var(--page-border);
+}
+
+.muted {
+  color: var(--page-muted);
+}

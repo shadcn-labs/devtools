@@ -1,0 +1,20 @@
+{
+  "name": "playground-next",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev --port 3100",
+    "build": "next build",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@shadcn-labs/devtools-next": "workspace:*",
+    "next": "^16.3.6",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3"
+  }
+}

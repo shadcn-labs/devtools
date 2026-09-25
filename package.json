@@ -1,0 +1,30 @@
+{
+  "name": "devtools",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "check": "ultracite check",
+    "fix": "ultracite fix",
+    "prepare": "lefthook install"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.0",
+    "lefthook": "^2.1.14",
+    "oxfmt": "^0.70.0",
+    "oxlint": "^1.85.0",
+    "tsdown": "^0.23.0",
+    "turbo": "^2.11.3",
+    "typescript": "^6.0.3",
+    "ultracite": "7.12.0",
+    "vitest": "^5.0.1"
+  },
+  "engines": {
+    "node": ">=20.9.0",
+    "pnpm": ">=10.0.0"
+  },
+  "packageManager": "pnpm@10.28.2"
+}

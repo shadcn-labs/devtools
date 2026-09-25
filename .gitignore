@@ -1,0 +1,10 @@
+node_modules
+.DS_Store
+dist
+*.vsix
+.next/
+next-env.d.ts
+.turbo
+*.tsbuildinfo
+.env*
+coverage
